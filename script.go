@@ -9,10 +9,10 @@ import (
 )
 
 type Scripter interface {
-	Eval(ctx context.Context, script string, keys []string, args ...interface{}) *Cmd
-	EvalSha(ctx context.Context, sha1 string, keys []string, args ...interface{}) *Cmd
-	ScriptExists(ctx context.Context, hashes ...string) *BoolSliceCmd
-	ScriptLoad(ctx context.Context, script string) *StringCmd
+	Eval(ctx interface{}, script string, keys []string, args ...interface{}) *Cmd
+	EvalSha(ctx interface{}, sha1 string, keys []string, args ...interface{}) *Cmd
+	ScriptExists(ctx interface{}, hashes ...string) *BoolSliceCmd
+	ScriptLoad(ctx interface{}, script string) *StringCmd
 }
 
 var (

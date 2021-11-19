@@ -6,7 +6,8 @@ import (
 	"sync/atomic"
 )
 
-func (c *ClusterClient) DBSize(ctx context.Context) *IntCmd {
+func (c *ClusterClient) DBSize(jCtx interface{}) *IntCmd {
+	ctx := unwrapCtx(jCtx)
 	cmd := NewIntCmd(ctx, "dbsize")
 	_ = c.hooks.process(ctx, cmd, func(ctx context.Context, _ Cmder) error {
 		var size int64
@@ -28,7 +29,8 @@ func (c *ClusterClient) DBSize(ctx context.Context) *IntCmd {
 	return cmd
 }
 
-func (c *ClusterClient) ScriptLoad(ctx context.Context, script string) *StringCmd {
+func (c *ClusterClient) ScriptLoad(jctx interface{}, script string) *StringCmd {
+	ctx := unwrapCtx(jctx)
 	cmd := NewStringCmd(ctx, "script", "load", script)
 	_ = c.hooks.process(ctx, cmd, func(ctx context.Context, _ Cmder) error {
 		mu := &sync.Mutex{}
@@ -54,7 +56,8 @@ func (c *ClusterClient) ScriptLoad(ctx context.Context, script string) *StringCm
 	return cmd
 }
 
-func (c *ClusterClient) ScriptFlush(ctx context.Context) *StatusCmd {
+func (c *ClusterClient) ScriptFlush(jCtx interface{}) *StatusCmd {
+	ctx := unwrapCtx(jCtx)
 	cmd := NewStatusCmd(ctx, "script", "flush")
 	_ = c.hooks.process(ctx, cmd, func(ctx context.Context, _ Cmder) error {
 		err := c.ForEachShard(ctx, func(ctx context.Context, shard *Client) error {
@@ -68,7 +71,8 @@ func (c *ClusterClient) ScriptFlush(ctx context.Context) *StatusCmd {
 	return cmd
 }
 
-func (c *ClusterClient) ScriptExists(ctx context.Context, hashes ...string) *BoolSliceCmd {
+func (c *ClusterClient) ScriptExists(jctx interface{}, hashes ...string) *BoolSliceCmd {
+	ctx := unwrapCtx(jctx)
 	args := make([]interface{}, 2+len(hashes))
 	args[0] = "script"
 	args[1] = "exists"
