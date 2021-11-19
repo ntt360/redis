@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-go get github.com/go-redis/redis/extra/redisotel/v8
+go get github.com/ntt360/redis/extra/rediscmd/redisotel/v8
 ```
 
 ## Usage

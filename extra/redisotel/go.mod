@@ -1,14 +1,14 @@
-module github.com/go-redis/redis/extra/redisotel/v8
+module github.com/ntt360/redis/extra/rediscmd/redisotel/v8
 
 go 1.15
 
-replace github.com/go-redis/redis/v8 => ../..
+replace github.com/ntt360/redis/v8 => ../..
 
-replace github.com/go-redis/redis/extra/rediscmd/v8 => ../rediscmd
+replace github.com/ntt360/redis/extra/rediscmd/rediscmd/v8 => ../rediscmd
 
 require (
-	github.com/go-redis/redis/extra/rediscmd/v8 v8.11.3
-	github.com/go-redis/redis/v8 v8.11.3
+	github.com/ntt360/redis/extra/rediscmd/rediscmd/v8 v8.11.3002
+	github.com/ntt360/redis/v8 v8.11.3002
 	go.opentelemetry.io/otel v1.0.0-RC2
 	go.opentelemetry.io/otel/trace v1.0.0-RC2
 )

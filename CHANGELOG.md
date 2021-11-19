@@ -32,8 +32,8 @@
   you need to update your imports:
 
 ```
-github.com/go-redis/redis/extra/redisotel -> github.com/go-redis/redis/extra/redisotel/v8
-github.com/go-redis/redis/extra/rediscensus -> github.com/go-redis/redis/extra/rediscensus/v8
+github.com/ntt360/redis/extra/rediscmd/redisotel -> github.com/ntt360/redis/extra/rediscmd/redisotel/v8
+github.com/ntt360/redis/extra/rediscmd/rediscensus -> github.com/ntt360/redis/extra/rediscmd/rediscensus/v8
 ```
 
 ## v8.5
