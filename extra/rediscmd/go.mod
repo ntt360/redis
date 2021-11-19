@@ -1,4 +1,4 @@
-module github.com/ntt360/redis/extra/rediscmd/rediscmd/v8
+module github.com/ntt360/redis/extra/rediscmd/v8
 
 go 1.15
 
