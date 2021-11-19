@@ -12,8 +12,8 @@ Tracing is enabled by adding a hook:
 
 ```go
 import (
-    "github.com/go-redis/redis/v8"
-    "github.com/go-redis/redis/extra/redisotel"
+    "github.com/ntt360/redis/v8"
+    "github.com/ntt360/redis/extra/redisotel"
 )
 
 rdb := rdb.NewClient(&rdb.Options{...})

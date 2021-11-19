@@ -4,7 +4,7 @@ package fuzz
 
 import (
 	"context"
-	"github.com/go-redis/redis/v8"
+	"github.com/ntt360/redis/v8"
 	"time"
 )
 

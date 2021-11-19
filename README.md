@@ -69,7 +69,7 @@ go get github.com/go-redis/redis/v8
 ```go
 import (
     "context"
-    "github.com/go-redis/redis/v8"
+    "github.com/ntt360/redis/v8"
 )
 
 var ctx = context.Background()
